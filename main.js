@@ -16,20 +16,47 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    computerSelection = 'rock';
-
     switch(playerSelection) {
-        case 'rock': 
-            return "player chose rock";    
+
+        case 'rock':
+            if (computerSelection == 'rock') {
+                return "It's a tie. Both selected rock";
+            } else if (computerSelection == 'paper') {
+                return "You lose! Paper beats rock";
+            } else if (computerSelection == 'scissors') {
+                return "You win! Rock beats scissors";
+            } else {
+                return "Error, did not input a suitable selection";
+            }
             break;
-        case 'paper': 
-            return "player chose paper";    
+            
+        case 'paper':
+            if (computerSelection == 'rock') {
+                return "You win! Paper beats rock";
+            } else if (computerSelection == 'paper') {
+                return "It's a tie. Both selected paper";
+            } else if (computerSelection == 'scissors') {
+                return "You lose! Scissors beats paper";
+            } else {
+                return "Error, did not input a suitable selection";
+            }
             break;
-        case 'scissors': 
-            return "player chose scissors";    
+
+        case 'scissors':
+            if (computerSelection == 'rock') {
+                return "You lose! Rock beats scissors";
+            } else if (computerSelection == 'paper') {
+                return "You win! Scissors beats paper";
+            } else if (computerSelection == 'scissors') {
+                return "It's a tie. Both selected scissors";
+            } else {
+                return "Error, did not input a suitable selection";
+            }
             break;
+        }
+
     }
-}
+
 
 
 
@@ -37,4 +64,4 @@ function playRound(playerSelection, computerSelection) {
 
 
 // console.log(computerPlay());
-console.log(playRound('paper'));
+console.log(playRound('scissors', 'rock'));

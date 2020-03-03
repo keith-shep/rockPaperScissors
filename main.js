@@ -65,6 +65,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+/*    
 function game() {
     let score = 0;
     let playerPlay;
@@ -80,5 +81,26 @@ function game() {
         alert("You lost. The computer beat you.");
     }
 }
+*/
 
-game();
+const container = document.querySelector('body');
+
+const btnRock = document.createElement('button');
+btnRock.textContent = 'rock';
+
+const btnPaper = document.createElement('button');
+btnPaper.textContent = 'paper';
+
+const btnScissors = document.createElement('button');
+btnScissors.textContent = 'scissors';
+
+
+
+container.appendChild(btnRock);
+container.appendChild(btnPaper);
+container.appendChild(btnScissors);
+
+
+btnRock.addEventListener('click', (e) => alert('rock'));
+btnPaper.addEventListener('click', (e) => alert('paper'));
+btnScissors.addEventListener('click', (e) => alert('scissors'));

@@ -20,46 +20,46 @@ function playRound(playerSelection, computerSelection) {
 
         case 'rock':
             if (computerSelection == 'rock') {
-                console.log("It's a tie. Both selected rock");
+                alert("It's a tie. Both selected rock");
                 return 0;
             } else if (computerSelection == 'paper') {
-                console.log("You lose! Paper beats rock");
+                alert("You lose! Paper beats rock");
                 return -1;
             } else if (computerSelection == 'scissors') {
-                console.log("You win! Rock beats scissors");
+                alert("You win! Rock beats scissors");
                 return 1;
             } else {
-                console.log("Error, did not input a suitable selection");
+                alert("Error, did not input a suitable selection");
             }
             break;
             
         case 'paper':
             if (computerSelection == 'rock') {
-                console.log("You win! Paper beats rock");
+                alert("You win! Paper beats rock");
                 return 1;
             } else if (computerSelection == 'paper') {
-                console.log("It's a tie. Both selected paper");
+                alert("It's a tie. Both selected paper");
                 return 0;
             } else if (computerSelection == 'scissors') {
-                console.log("You lose! Scissors beats paper");
+                alert("You lose! Scissors beats paper");
                 return -1;
             } else {
-                console.log("Error, did not input a suitable selection");
+                alert("Error, did not input a suitable selection");
             }
             break;
 
         case 'scissors':
             if (computerSelection == 'rock') {
-                console.log("You lose! Rock beats scissors");
+                alert("You lose! Rock beats scissors");
                 return -1;
             } else if (computerSelection == 'paper') {
-                console.log("You win! Scissors beats paper");
+                alert("You win! Scissors beats paper");
                 return 1;
             } else if (computerSelection == 'scissors') {
-                console.log("It's a tie. Both selected scissors");
+                alert("It's a tie. Both selected scissors");
                 return 0;
             } else {
-                console.log("Error, did not input a suitable selection");
+                alert("Error, did not input a suitable selection");
             }
             break;
         }
@@ -75,10 +75,10 @@ function game() {
     }
 
     if (score > 0) {
-        console.log("You win! You beat the computer.");
+        alert("You win! You beat the computer.");
     } else {
-        console.log("You lost. The computer beat you.");
+        alert("You lost. The computer beat you.");
     }
 }
 
-console.log(game());
+game();

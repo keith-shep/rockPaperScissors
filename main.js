@@ -71,6 +71,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function checkWinner() {
+    if (playerScore == 2) {
+        alert('You won! You are victorious!');
+    } else if (computerScore == 2) {
+        alert('You lost! Please close the door on your way out.');
+    } 
+}
 
 let computerScore = 0;
 let playerScore = 0;
@@ -92,12 +99,38 @@ container.appendChild(btnScissors);
 
 btnRock.addEventListener('click', (e) => {
     playRound('rock', computerPlay());
-    results.textContent = playerScore;
+    playerScoreResult.textContent = 'Your Score: ' + playerScore;
+    computerScoreResult.textContent = 'Computer Score: ' + computerScore;
+    checkWinner();
     }
 );
-btnPaper.addEventListener('click', (e) => playRound('paper', computerPlay()));
-btnScissors.addEventListener('click', (e) => playRound('scissors', computerPlay()));
+
+btnPaper.addEventListener('click', (e) => {
+    playRound('paper', computerPlay());
+    playerScoreResult.textContent = 'Your Score: ' + playerScore;
+    computerScoreResult.textContent = 'Computer Score: ' + computerScore;
+    checkWinner();
+    }
+);
+
+btnScissors.addEventListener('click', (e) => {
+    playRound('scissors', computerPlay());
+    playerScoreResult.textContent = 'Your Score: ' + playerScore;
+    computerScoreResult.textContent = 'Computer Score: ' + computerScore;
+    checkWinner();
+    }
+);
 
 results = document.createElement('div');
-results.textContent = playerScore; //this for update
+
+playerScoreResult = document.createElement('p');
+computerScoreResult = document.createElement('p');
+
+playerScoreResult.textContent = 'Your Score: ' + playerScore;
+computerScoreResult.textContent = 'Computer Score: ' + computerScore;
+results.appendChild(playerScoreResult);
+results.appendChild(computerScoreResult);
+
 container.appendChild(results);
+
+

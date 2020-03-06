@@ -72,9 +72,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function checkWinner() {
-    if (playerScore == 2) {
+    if (playerScore == 5) {
         alert('You won! You are victorious!');
-    } else if (computerScore == 2) {
+    } else if (computerScore == 5) {
         alert('You lost! Please close the door on your way out.');
     } 
 }
